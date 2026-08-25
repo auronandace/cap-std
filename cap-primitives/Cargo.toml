@@ -17,7 +17,7 @@ ambient-authority = "0.0.2"
 arbitrary = { version = "1.0.0", optional = true, features = ["derive"] }
 ipnet = "2.5.0"
 maybe-owned = "0.3.4"
-fs-set-times = "0.20.0"
+fs-set-times = "0.20.3"
 io-extras = "0.19.0"
 io-lifetimes = { version = "3.0.1", default-features = false }
 
@@ -25,7 +25,7 @@ io-lifetimes = { version = "3.0.1", default-features = false }
 cap-tempfile = { path = "../cap-tempfile" }
 
 [target.'cfg(not(windows))'.dependencies]
-rustix = { version = "1.0.0", features = ["fs", "process", "termios", "time"] }
+rustix = { version = "1.1.4", features = ["fs", "process", "termios", "time"] }
 
 [target.'cfg(any(target_os = "android", target_os = "linux"))'.dependencies]
 rustix-linux-procfs = "0.1.1"

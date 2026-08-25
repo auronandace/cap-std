@@ -160,8 +160,10 @@ impl ImplMetadataExt {
                     u64::try_from(stat.st_dev).unwrap()
                 },
                 ino: stat.st_ino.into(),
-                #[cfg(not(target_os = "wasi"))]
+                #[cfg(not(any(target_os = "wasi", target_os = "redox")))]
                 mode: u32::from(stat.st_mode),
+                #[cfg(target_os = "redox")]
+                mode: stat.st_mode as u32,
                 nlink: u64::from(stat.st_nlink),
                 #[cfg(not(target_os = "wasi"))]
                 uid: stat.st_uid,
