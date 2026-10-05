@@ -25,7 +25,7 @@ io-lifetimes = { version = "3.0.1", default-features = false }
 cap-tempfile = { path = "../cap-tempfile" }
 
 [target.'cfg(not(windows))'.dependencies]
-rustix = { version = "1.1.4", features = ["fs", "process", "termios", "time"] }
+rustix = { version = "1.1.5", features = ["fs", "process", "termios", "time"] }
 
 [target.'cfg(any(target_os = "android", target_os = "linux"))'.dependencies]
 rustix-linux-procfs = "0.1.1"
